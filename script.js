@@ -26,45 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ... (Splsh screen logic remains)
 
-    // Initialize Wedding Candid Swiper Horizontal Grid
-    const candidSwiper = new Swiper(".candidSwiper", {
-        slidesPerView: 1.2,
-        slidesPerGroup: 1,
-        spaceBetween: 30,
-        loop: true,
-        speed: 1200,
-        grabCursor: true,
-        parallax: true,
-        resistance: true,
-        resistanceRatio: 0.85,
-        pagination: {
-            el: ".swiper-pagination-candid",
-            type: "progressbar",
-        },
-        navigation: {
-            nextEl: ".candid-next",
-            prevEl: ".candid-prev",
-        },
-        breakpoints: {
-            600: { slidesPerView: 1.5, spaceBetween: 30 },
-            1024: { slidesPerView: 2.2, spaceBetween: 40 },
-            1400: { slidesPerView: 3, spaceBetween: 50 }
+    // Smart Photo Loader: Only show when pixel data is ready to prevent flickering
+    const photos = document.querySelectorAll('.card-img-wrapper img');
+    photos.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+            // Failsafe for slow connections/stuck images
+            setTimeout(() => img.classList.add('loaded'), 5000);
         }
     });
 
-    // Separate entrance animation for all candid slides via GSAP ScrollTrigger
-    gsap.from(".candid-slide", {
-        scrollTrigger: {
-            trigger: ".wedding-candid",
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-        },
-        y: 80,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 1.5,
-        ease: "power3.out"
-    });
     // Custom Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorBlob = document.querySelector('.cursor-blob');
