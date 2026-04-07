@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize Wedding Candid Swiper Horizontal Grid
     const candidSwiper = new Swiper(".candidSwiper", {
-        slidesPerView: 3,
+        slidesPerView: 1.2,
         slidesPerGroup: 1,
-        spaceBetween: 0,
+        spaceBetween: 30,
         loop: true,
         speed: 1200,
         grabCursor: true,
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
             prevEl: ".candid-prev",
         },
         breakpoints: {
-            280: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 }
+            600: { slidesPerView: 1.5, spaceBetween: 30 },
+            1024: { slidesPerView: 2.2, spaceBetween: 40 },
+            1400: { slidesPerView: 3, spaceBetween: 50 }
         }
     });
 
