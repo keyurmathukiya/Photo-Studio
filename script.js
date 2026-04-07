@@ -3,25 +3,68 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize Lenis Smooth Scroll
+    // Initialize Lenis Smooth Scroll with Optimized Performance
     const lenis = new Lenis({
-        duration: 1.2,
+        duration: 1.5,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
         smoothTouch: false,
-        touchMultiplier: 2,
+        touchMultiplier: 1.5,
         infinite: false,
     });
 
-    // Integrate GSAP with Lenis (single RAF loop via GSAP ticker)
+    // Integrate GSAP with Lenis
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
     });
-    gsap.ticker.lagSmoothing(false);
+    gsap.ticker.lagSmoothing(0); // Better for GSAP animations
+
+    // Custom Cursor Logic ... (Existing logic remains)
+
+    // ... (Splsh screen logic remains)
+
+    // Initialize Wedding Candid Swiper Horizontal Grid
+    const candidSwiper = new Swiper(".candidSwiper", {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 1200,
+        grabCursor: true,
+        parallax: true,
+        resistance: true,
+        resistanceRatio: 0.85,
+        pagination: {
+            el: ".swiper-pagination-candid",
+            type: "progressbar",
+        },
+        navigation: {
+            nextEl: ".candid-next",
+            prevEl: ".candid-prev",
+        },
+        breakpoints: {
+            280: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 }
+        }
+    });
+
+    // Separate entrance animation for all candid slides via GSAP ScrollTrigger
+    gsap.from(".candid-slide", {
+        scrollTrigger: {
+            trigger: ".wedding-candid",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        },
+        y: 80,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 1.5,
+        ease: "power3.out"
+    });
     // Custom Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorBlob = document.querySelector('.cursor-blob');
@@ -90,29 +133,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Preloader Animation
+    // Premium Splash Screen Animation
     const preloaderTimeline = gsap.timeline();
 
     preloaderTimeline
-        .to(".loading-progress", {
-            width: "100%",
+        .to(".shutter-circle", {
+            scale: 1,
+            opacity: 1,
             duration: 1.5,
-            ease: "power2.inOut"
+            ease: "expo.out"
         })
-        .to(".preloader-text span", {
+        .to(".logo-letter", {
             y: 0,
             opacity: 1,
-            duration: 0.8,
+            duration: 1,
             stagger: 0.1,
-            ease: "back.out(1.7)",
-            delay: -1
-        })
+            ease: "power4.out"
+        }, "-=1")
+        .to(".loading-subtext", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5")
+        .to(".shutter-circle", {
+            scale: 10,
+            duration: 1.5,
+            ease: "expo.in"
+        }, "+=0.5")
         .to(".preloader", {
-            yPercent: -100,
-            duration: 1.2,
-            ease: "power4.inOut",
-            delay: 0.5
-        })
+            opacity: 0,
+            display: "none",
+            duration: 1,
+            ease: "power2.inOut"
+        }, "-=0.5")
         .from(".navbar", {
             y: -50,
             opacity: 0,
@@ -123,8 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 100,
             opacity: 0,
             duration: 1.2,
+            stagger: 0.2,
             ease: "power4.out"
         }, "-=0.8");
+
 
 
     // Grand Slider - Swiper js integration
@@ -180,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     gsap.from(textReveal.words, {
         scrollTrigger: {
-            trigger: ".ethereal-about",
+            trigger: ".eternal-about",
             start: "top 80%",
             end: "bottom 50%",
             scrub: 1,
@@ -192,23 +248,56 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out"
     });
 
-    // Horizontal Scroll Section Animation
-    // Only apply on desktop
-    if(window.innerWidth > 1024) {
-        const horizontalSections = gsap.utils.toArray('.horizontal-slide');
-        
-        gsap.to(horizontalSections, {
-            xPercent: -100 * (horizontalSections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".horizontal-scroll",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (horizontalSections.length - 1),
-                end: () => "+=" + document.querySelector(".horizontal-wrapper").offsetWidth
-            }
+    // --- Mobile Menu Toggle ---
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Close menu on link click
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
         });
     }
+
+    // --- Responsive Horizontal Scroll Logic ---
+    let horizontalTween;
+    function initHorizontalScroll() {
+        if (horizontalTween) horizontalTween.kill();
+        
+        const wrapper = document.querySelector('.horizontal-wrapper');
+        const slides = gsap.utils.toArray('.horizontal-slide');
+        
+        if (window.innerWidth > 1024) {
+            // Desktop: True horizontal scroll
+            horizontalTween = gsap.to(slides, {
+                xPercent: -100 * (slides.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".horizontal-scroll",
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (slides.length - 1),
+                    end: () => "+=" + wrapper.offsetWidth
+                }
+            });
+        } else {
+            // Mobile/Tablet: Stacked layout (standard CSS handling)
+            gsap.set(slides, { xPercent: 0 });
+        }
+    }
+
+    initHorizontalScroll();
+    window.addEventListener('resize', initHorizontalScroll);
 
     // Generalized Split Title Reveal Sub-section Advanced Animation
     const titleSkews = gsap.utils.toArray('.title-skew');
@@ -262,6 +351,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
     });
+
+    // Footer Massive Title Animation
+    const footerTitle = document.querySelector('.footer-title');
+    if (footerTitle) {
+        const splitFooter = new SplitType(footerTitle, { types: 'chars' });
+        gsap.from(splitFooter.chars, {
+            y: 100,
+            opacity: 0,
+            stagger: 0.02,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: footerTitle,
+                start: "top 90%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    }
 
     // Footer Parallax
     gsap.from(".footer-container", {

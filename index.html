@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethereal Studios | Premium Photography</title>
+    <title>KM Candid | Cinematic Wedding Photography</title>
     <meta name="description"
         content="Cinematic, premium photography studio capturing elegant, timeless moments. Next-level visual storytelling.">
     <!-- Google Fonts -->
@@ -27,27 +27,49 @@
     <div class="cursor-dot"></div>
     <div class="cursor-blob"></div>
 
-    <!-- Preloader -->
+    <!-- Premium Splash Screen -->
     <div class="preloader">
-        <div class="preloader-text">
-            <span>E</span><span>T</span><span>H</span><span>E</span><span>R</span><span>E</span><span>A</span><span>L</span>
-        </div>
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
+        <div class="splash-container">
+            <div class="shutter-circle"></div>
+            <div class="logo-reveal">
+                <span class="logo-letter">C</span>
+                <span class="logo-letter">A</span>
+                <span class="logo-letter">N</span>
+                <span class="logo-letter">D</span>
+                <span class="logo-letter">I</span>
+                <span class="logo-letter">D</span>
+            </div>
+            <div class="loading-subtext">True Story Photography</div>
         </div>
     </div>
 
     <!-- Advanced Navigation -->
     <header class="navbar">
-        <div class="logo">ETHEREAL</div>
+        <div class="logo">KM CANDID</div>
         <nav class="nav-links">
             <a href="#hero" class="nav-link">Home</a>
+            <a href="#wedding-candid" class="nav-link">Wedding Candid</a>
             <a href="#journal" class="nav-link">Gallery</a>
-            <a href="#about" class="nav-link">About Us</a>
-            <a href="#work" class="nav-link">Work</a>
-            <a href="#contact" class="nav-link">Contact Us</a>
+            <a href="#about" class="nav-link">Vision</a>
+            <a href="#work" class="nav-link">Stories</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#hero">Home</a>
+        <a href="#wedding-candid">Wedding Candid</a>
+        <a href="#journal">Gallery</a>
+        <a href="#about">Vision</a>
+        <a href="#work">Stories</a>
+        <a href="#contact">Contact</a>
+    </div>
+
 
     <!-- Floating Navigation HUD -->
     <div class="floating-hud magnetic-btn">
@@ -67,8 +89,9 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
                         <div class="slide-image-wrapper">
-                            <img src="assets/grand_wedding_shot.png" alt="Grand Wedding Shot">
+                            <img src="assets/grand_wedding_shot.png" alt="Grand Wedding Shot" decoding="async">
                         </div>
+
                         <div class="slide-content">
                             <h2 class="slide-title">Timeless <br> <span>Romance</span></h2>
                             <p class="slide-subtitle">Capturing the unfiltered emotion of your grandest moments.</p>
@@ -77,8 +100,9 @@
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
                         <div class="slide-image-wrapper">
-                            <img src="assets/fashion_portrait.png" alt="Fashion Portrait">
+                            <img src="assets/fashion_portrait.png" alt="Fashion Portrait" decoding="async">
                         </div>
+
                         <div class="slide-content">
                             <h2 class="slide-title">Editorial <br> <span>Elegance</span></h2>
                             <p class="slide-subtitle">High-fashion visual storytelling in every frame.</p>
@@ -87,8 +111,9 @@
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
                         <div class="slide-image-wrapper">
-                            <img src="assets/cinematic_landscape.png" alt="Cinematic Landscape">
+                            <img src="assets/cinematic_landscape.png" alt="Cinematic Landscape" decoding="async">
                         </div>
+
                         <div class="slide-content">
                             <h2 class="slide-title">Vast <br> <span>Horizons</span></h2>
                             <p class="slide-subtitle">Cinematic scale for your most adventurous journeys.</p>
@@ -109,8 +134,8 @@
             </div>
         </section>
 
-        <!-- Custom Premium About Section (The Ethereal Vision) -->
-        <section class="ethereal-about" id="about">
+        <!-- Custom Premium Vision Section (The Eternal Vision) -->
+        <section class="eternal-about" id="about">
             <div class="about-hero">
                 <h2 class="title-skew">The Original<br><span>Vision</span></h2>
             </div>
@@ -146,8 +171,9 @@
                 <!-- Right Sticky Portrait -->
                 <div class="vision-portrait-wrapper">
                     <div class="sticky-portrait parallax-img">
-                        <img src="assets/fashion_portrait.png" alt="Director Portrait">
+                        <img src="assets/fashion_portrait.png" alt="Director Portrait" loading="lazy" decoding="async">
                         <div class="portrait-caption">
+
                             <span>The Director</span>
                             <div class="caption-line"></div>
                         </div>
@@ -158,8 +184,9 @@
 
         <!-- Kinetic Split Typography Feature -->
         <section class="kinetic-typography parallax-img">
-            <img src="assets/cinematic_landscape.png" alt="Elegance Background" class="kinetic-bg">
+            <img src="assets/cinematic_landscape.png" alt="Elegance Background" class="kinetic-bg" loading="lazy" decoding="async">
             <div class="kinetic-container">
+
                 <div class="k-word k-left">Elegance</div>
                 <div class="k-word k-center">&amp;</div>
                 <div class="k-word k-right">Legacy</div>
@@ -188,7 +215,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/grand_wedding_shot.png" alt="Wedding">
+                        <img src="assets/grand_wedding_shot.png" alt="Wedding" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Amaya & Rohan</h3>
                             <span>Udaipur</span>
@@ -197,7 +224,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/fashion_portrait.png" alt="Fashion">
+                        <img src="assets/fashion_portrait.png" alt="Fashion" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Vogue Series</h3>
                             <span>Editorial</span>
@@ -206,7 +233,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/cinematic_landscape.png" alt="Landscape">
+                        <img src="assets/cinematic_landscape.png" alt="Landscape" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>The Escape</h3>
                             <span>Iceland</span>
@@ -215,7 +242,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/elopement_mountain.png" alt="Elopement">
+                        <img src="assets/elopement_mountain.png" alt="Elopement" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Highland Vows</h3>
                             <span>Scotland</span>
@@ -224,7 +251,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/fashion_noir.png" alt="Noir Fashion">
+                        <img src="assets/fashion_noir.png" alt="Noir Fashion" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Noir Series</h3>
                             <span>Studio</span>
@@ -233,7 +260,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/bridal_details.png" alt="Bridal Details">
+                        <img src="assets/bridal_details.png" alt="Bridal Details" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>The Veil</h3>
                             <span>Details</span>
@@ -242,7 +269,7 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/cinematic_reception.png" alt="Cinematic Reception">
+                        <img src="assets/cinematic_reception.png" alt="Cinematic Reception" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Grand Finale</h3>
                             <span>Reception</span>
@@ -251,17 +278,127 @@
                 </div>
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
-                        <img src="assets/IMG_4312.jpg" alt="Wedding Candid">
+                        <img src="assets/IMG_4312.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                         <div class="work-overlay">
                             <h3>Wedding Candid</h3>
                             <span>Real Moments</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="horizontal-slide img-slide">
                     <div class="work-item">
                         <h2 class="view-all-text">View All <br> Stories</h2>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Wedding Candid Section -->
+        <section class="wedding-candid" id="wedding-candid">
+            <div class="section-intro">
+                <span class="sub-label">Cinematic Anthology</span>
+                <h2 class="title-skew">Wedding<br><span>Candid</span></h2>
+                <p class="intro-desc">Unscripted moments, stolen glances, and the raw, beautiful chaos of your most important day. We don't just take photos; we captureheartbeats.</p>
+            </div>
+
+            <div class="swiper-candid-container">
+                <div class="swiper candidSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_1.png" alt="Wedding Candid Moment" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">The Union</span>
+                                    <h4 class="card-title">Golden Hour Whispers</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_2.png" alt="Bridal Still" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">Portraits</span>
+                                    <h4 class="card-title">The Bridal Solitude</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_3.png" alt="Groom Look" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">Emotion</span>
+                                    <h4 class="card-title">A Silent Vow</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_4.png" alt="Celebration" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">Joy</span>
+                                    <h4 class="card-title">Unfettered Laughter</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_5.png" alt="First Dance" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">Connection</span>
+                                    <h4 class="card-title">The First Dance</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide candid-slide">
+                            <div class="candid-card">
+                                <div class="card-img-wrapper" data-swiper-parallax="-200">
+                                    <img src="assets/wedding_candid_6.png" alt="Details" loading="lazy" decoding="async">
+                                </div>
+                                <div class="card-content" data-swiper-parallax="-100">
+                                    <span class="card-category">Still Life</span>
+                                    <h4 class="card-title">The Eternal Ring</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Swiper controls -->
+                    <div class="candid-controls">
+                        <div class="swiper-pagination-candid"></div>
+                        <div class="candid-nav">
+                            <div class="candid-prev">PRV</div>
+                            <div class="candid-next">NXT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="candid-marquee">
+                <div class="marquee-content">
+                    <span>TIMLESS ROMANCE</span>
+                    <span>CANDID SOUL</span>
+                    <span>EDITORIAL ELEGANCE</span>
+                    <span>THE UNEXPECTED</span>
+                    <span>TIMLESS ROMANCE</span>
+                    <span>CANDID SOUL</span>
+                    <span>EDITORIAL ELEGANCE</span>
+                    <span>THE UNEXPECTED</span>
                 </div>
             </div>
         </section>
@@ -273,62 +410,63 @@
             </div>
             <div class="masonry-grid">
                 <div class="masonry-item item-1 parallax-img">
-                    <img src="assets/wedding_details.png" alt="Wedding Details">
+                    <img src="assets/wedding_details.png" alt="Wedding Details" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-2 parallax-img">
-                    <img src="assets/couple_silhouette.png" alt="Couple Silhouette">
+                    <img src="assets/couple_silhouette.png" alt="Couple Silhouette" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-3 parallax-img">
-                    <img src="assets/urban_fashion.png" alt="Urban Fashion">
+                    <img src="assets/urban_fashion.png" alt="Urban Fashion" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-4 parallax-img">
-                    <img src="assets/editorial_bride.png" alt="Editorial Bride">
+                    <img src="assets/editorial_bride.png" alt="Editorial Bride" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-5 parallax-img">
-                    <img src="assets/IMG_4312.jpg" alt="Wedding Candid">
+                    <img src="assets/IMG_4312.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-6 parallax-img">
-                    <img src="assets/1M4A8828.jpg" alt="Wedding Candid">
+                    <img src="assets/1M4A8828.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-7 parallax-img">
-                    <img src="assets/CB8A0155.jpg" alt="Wedding Candid">
+                    <img src="assets/CB8A0155.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-8 parallax-img">
-                    <img src="assets/CB8A0325.jpg" alt="Wedding Candid">
+                    <img src="assets/CB8A0325.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-9 parallax-img">
-                    <img src="assets/DJI_20241209172706_0093_D_FLYCAPTURE.jpg" alt="Wedding Candid">
+                    <img src="assets/DJI_20241209172706_0093_D_FLYCAPTURE.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-10 parallax-img">
-                    <img src="assets/MBJ_5953.jpg" alt="Wedding Candid">
+                    <img src="assets/MBJ_5953.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-11 parallax-img">
-                    <img src="assets/SSP01330.JPG" alt="Wedding Candid">
+                    <img src="assets/SSP01330.JPG" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-12 parallax-img">
-                    <img src="assets/WC_13299.jpg" alt="Wedding Candid">
+                    <img src="assets/WC_13299.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-13 parallax-img">
-                    <img src="assets/WC_17354.JPG" alt="Wedding Candid">
+                    <img src="assets/WC_17354.JPG" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-14 parallax-img">
-                    <img src="assets/WC_17407.JPG" alt="Wedding Candid">
+                    <img src="assets/WC_17407.JPG" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-15 parallax-img">
-                    <img src="assets/WC_19833.jpg" alt="Wedding Candid">
+                    <img src="assets/WC_19833.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-16 parallax-img">
-                    <img src="assets/WC__5748.jpg" alt="Wedding Candid">
+                    <img src="assets/WC__5748.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-17 parallax-img">
-                    <img src="assets/WC__6391.jpg" alt="Wedding Candid">
+                    <img src="assets/WC__6391.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-18 parallax-img">
-                    <img src="assets/WC__7232.jpg" alt="Wedding Candid">
+                    <img src="assets/WC__7232.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
                 <div class="masonry-item item-19 parallax-img">
-                    <img src="assets/WC__8428.jpg" alt="Wedding Candid">
+                    <img src="assets/WC__8428.jpg" alt="Wedding Candid" loading="lazy" decoding="async">
                 </div>
+
             </div>
         </section>
 
@@ -339,7 +477,7 @@
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>Contact</h4>
-                        <a href="#">hello@ethereal.com</a>
+                        <a href="#">hello@kmcandid.com</a>
                         <a href="#">+91 98765 43210</a>
                     </div>
                     <div class="link-group">
@@ -355,7 +493,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2026 Ethereal Studios. All Rights Reserved.</p>
+                    <p>&copy; 2026 KM Candid Photography. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
